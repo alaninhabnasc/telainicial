@@ -6,26 +6,29 @@
 <title>Tela</title>
 
 <style>
+  * {
+    box-sizing: border-box;
+  }
+
   body {
     margin: 0;
-    padding: 0;
-    width: 100vw;
-    height: 100vh;
-    background: #551A8B;
+    width: 100%;
+    min-height: 100svh;
+    background: #DDE1FF; /* só o roxinho claro aparece */
     display: flex;
     justify-content: center;
     align-items: center;
     font-family: Arial, sans-serif;
+    overflow: hidden; /* impede mostrar o fundo roxo escuro */
   }
 
   .container {
-    background: #DDE1FF;
-    width: 90%;
+    width: 100%;
     max-width: 400px;
+    min-height: 100svh;
+    background: #DDE1FF;
     padding: 60px 20px;
     border-radius: 20px;
-    text-align: center;
-    min-height: 70vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -33,16 +36,16 @@
   }
 
   .icon {
-    width: 180px;
+    width: 160px;
+    max-width: 80%;
     margin-bottom: 20px;
   }
 
   .titulo {
-    font-size: 30px;
+    font-size: clamp(24px, 5vw, 30px);
     font-weight: 800;
     color: #4A00CC;
-    margin-top: 15px;
-    margin-bottom: 45px;
+    margin: 15px 0 45px;
   }
 
   .btn {
@@ -68,12 +71,9 @@
   <div class="container">
     <img class="icon" src="logo.jpeg" alt="Logo" />
     <h1 class="titulo">DialogX</h1>
-
-    <!-- BOTÃO -->
     <button class="btn" onclick="proximo()">Próximo</button>
   </div>
 
-  <!-- SCRIPT DE NAVEGAÇÃO -->
   <script>
     function proximo() {
       window.location.href = "../app1/";
