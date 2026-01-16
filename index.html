@@ -3,18 +3,15 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>DialogX</title>
+<title>Tela</title>
 
 <style>
-  * {
-    box-sizing: border-box;
-  }
-
   body {
     margin: 0;
+    padding: 0;
     width: 100vw;
     height: 100vh;
-    background: #551A8B; /* roxo escuro */
+    background: #551A8B;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -22,12 +19,13 @@
   }
 
   .container {
-    background: #DDE1FF; /* roxo claro */
-    width: 100%;
-    max-width: 420px;
-    min-height: 85vh;
-    padding: 40px 20px;
-    border-radius: 24px;
+    background: #DDE1FF;
+    width: 90%;
+    max-width: 400px;
+    padding: 60px 20px;
+    border-radius: 20px;
+    text-align: center;
+    min-height: 70vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -35,54 +33,51 @@
   }
 
   .icon {
-    width: 160px;
+    width: 180px;
     margin-bottom: 20px;
   }
 
   .titulo {
-    font-size: 32px;
+    font-size: 30px;
     font-weight: 800;
     color: #4A00CC;
-    margin-bottom: 50px;
+    margin-top: 15px;
+    margin-bottom: 45px;
   }
 
   .btn {
     background: #5A0FBF;
     border: none;
-    padding: 15px 60px;
+    padding: 15px 50px;
     border-radius: 40px;
     color: white;
     font-size: 18px;
     font-weight: 700;
     cursor: pointer;
+    margin-top: 25px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
   }
 
   .btn:hover {
     opacity: 0.9;
   }
-
-  /* notebook / desktop */
-  @media (min-width: 768px) {
-    .container {
-      min-height: 70vh;
-    }
-  }
 </style>
 </head>
 
 <body>
-
   <div class="container">
-    <img src="logo.jpeg" class="icon" alt="Logo">
+    <img class="icon" src="logo.jpeg" alt="Logo" />
     <h1 class="titulo">DialogX</h1>
+
+    <!-- BOTÃO -->
     <button class="btn" onclick="proximo()">Próximo</button>
   </div>
 
+  <!-- SCRIPT DE NAVEGAÇÃO -->
   <script>
     function proximo() {
-      window.location.href = "./app1/index.html";
+      window.location.href = "../app1/";
     }
   </script>
-
 </body>
-</html>
+</html>   quero que fique responsivo e apareça só a parte roxinho claro quando inspecionar
