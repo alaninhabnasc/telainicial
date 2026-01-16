@@ -60,15 +60,14 @@
     opacity: 0.9;
   }
 
-  /* 🔥 QUANDO INSPECIONAR / DESKTOP */
-  @media (min-width: 768px) {
+  /* 📱 SOMENTE NO INSPECIONAR (MOBILE) */
+  @media (max-width: 600px) {
     body {
       background: #DDE1FF; /* só roxo claro */
     }
 
     .container {
       width: 100%;
-      max-width: none;
       min-height: 100vh;
       border-radius: 0;
     }
