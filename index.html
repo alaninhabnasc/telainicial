@@ -1,63 +1,84 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tela Inicial</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Tela</title>
 
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            background-color: #4A148C; /* roxo escuro */
-            font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #551A8B;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+  }
 
-        .container {
-            background-color: #DDE1FF; /* roxo claro */
-            width: 90%;
-            max-width: 400px;
-            padding: 40px;
-            border-radius: 25px;
-            text-align: center;
-            box-shadow: 0px 8px 20px rgba(0,0,0,0.3);
-        }
+  .container {
+    background: #DDE1FF;
+    width: 90%;
+    max-width: 400px;
+    padding: 60px 20px;
+    border-radius: 20px;
+    text-align: center;
+    min-height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 
-        h1 {
-            color: #4A148C;
-            font-size: 26px;
-            margin-bottom: 30px;
-        }
+  .icon {
+    width: 180px;
+    margin-bottom: 20px;
+  }
 
-        .btn {
-            display: inline-block;
-            padding: 14px 25px;
-            background-color: #6A1B9A; /* roxo médio */
-            color: #fff;
-            text-decoration: none;
-            border-radius: 30px;
-            font-size: 15px;
-            font-weight: bold;
-            transition: 0.3s;
-        }
+  .titulo {
+    font-size: 30px;
+    font-weight: 800;
+    color: #4A00CC;
+    margin-top: 15px;
+    margin-bottom: 45px;
+  }
 
-        .btn:hover {
-            background-color: #4A148C;
-        }
-    </style>
+  .btn {
+    background: #5A0FBF;
+    border: none;
+    padding: 15px 50px;
+    border-radius: 40px;
+    color: white;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: 25px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  }
+
+  .btn:hover {
+    opacity: 0.9;
+  }
+</style>
 </head>
+
 <body>
+  <div class="container">
+    <img class="icon" src="logo.jpeg" alt="Logo" />
+    <h1 class="titulo">DialogX</h1>
 
-    <div class="container">
-        <h1>Bem-vindo ao DialogX</h1>
+    <!-- BOTÃO -->
+    <button class="btn" onclick="proximo()">Próximo</button>
+  </div>
 
-        <!-- BOTÃO PRÓXIMO FUNCIONANDO -->
-        <a href="app1/index.html" class="btn">Próximo</a>
-    </div>
-
+  <!-- SCRIPT DE NAVEGAÇÃO -->
+  <script>
+    function proximo() {
+      window.location.href = "../app1/";
+    }
+  </script>
 </body>
-</html>
+</html>    
