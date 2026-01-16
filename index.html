@@ -3,199 +3,94 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>DialogX Chat</title>
+<title>DialogX - Tela Inicial</title>
 
 <style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* 🔹 DESKTOP (normal) */
+body {
+    background-color: #6A1B9A; /* roxo escuro */
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.container {
+    background-color: #DDE1FF; /* roxinho claro */
+    width: 100%;
+    max-width: 420px;
+    padding: 40px 30px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+}
+
+.logo img {
+    width: 180px;
+    margin-bottom: 20px;
+}
+
+h1 {
+    color: #4A148C;
+    font-size: 22px;
+    margin-bottom: 30px;
+}
+
+.btn {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 30px;
+    background-color: #6A1B9A;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #4A148C;
+}
+
+/* 🔹 MOBILE / INSPECIONAR */
+@media (max-width: 768px) {
     body {
-        background: #7b43b4;
-        font-family: Arial, sans-serif;
-        margin: 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        background-color: #DDE1FF; /* só roxinho claro */
+        align-items: flex-start;
+    }
+
+    .container {
+        max-width: 100%;
         min-height: 100vh;
+        border-radius: 0;
+        box-shadow: none;
+        padding-top: 60px;
     }
-
-    .chat-container {
-        background: #dde1ff;
-        width: 350px;
-        max-width: 95%;
-        padding: 20px;
-        border-radius: 15px;
-        box-shadow: 0 0 10px rgba(0,0,0,0.2);
-        position: relative;
-        display: flex;
-        flex-direction: column;
-    }
-
-    .logo {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        position: absolute;
-        top: 12px;
-        left: 12px;
-    }
-
-    .logo img {
-        width: 60px;
-        height: 60px;
-        border-radius: 50%;
-        object-fit: cover;
-        opacity: 0.95;
-    }
-
-    .logo span {
-        font-weight: 600;
-        color: #4b0082;
-        font-size: 22px;
-        transform: translateY(2px);
-    }
-
-    #chat {
-        flex: 1;
-        overflow-y: auto;
-        margin-top: 95px;
-        margin-bottom: 15px;
-        padding-right: 8px;
-    }
-
-    .message {
-        margin-bottom: 10px;
-        font-size: 15px;
-        line-height: 1.4;
-        border-radius: 10px;
-        padding: 8px 12px;
-        max-width: 80%;
-    }
-
-    .bot {
-        background: #ffffff;
-        color: #4b0082;
-    }
-
-    .user {
-        background: #7b43b4;
-        color: #fff;
-        margin-left: auto;
-        text-align: right;
-    }
-
-    .input-row {
-        display: flex;
-        gap: 8px;
-    }
-
-    input {
-        flex: 1;
-        padding: 10px;
-        border-radius: 10px;
-        border: 1px solid #ccc;
-        font-size: 14px;
-    }
-
-    button {
-        padding: 0 20px;
-        background: #7b43b4;
-        color: white;
-        border: none;
-        border-radius: 10px;
-        cursor: pointer;
-        font-weight: bold;
-        font-size: 14px;
-    }
-
-    button:hover {
-        background: #642e9b;
-    }
-
-    /* 🔹 QUANDO INSPECIONAR / MOBILE */
-    @media (max-width: 768px) {
-        body {
-            background: #dde1ff;
-            align-items: flex-start;
-        }
-
-        .chat-container {
-            width: 100%;
-            max-width: 100%;
-            min-height: 100vh;
-            border-radius: 0;
-            box-shadow: none;
-        }
-    }
+}
 </style>
 </head>
 
 <body>
 
-<div class="chat-container">
+<div class="container">
     <div class="logo">
-        <img src="logo.jpeg" alt="Logo">
-        <span>DialogX</span>
+        <img src="dialogx.jpeg" alt="DialogX">
     </div>
 
-    <div id="chat"></div>
+    <h1>A melhor assistência para sua empresa</h1>
 
-    <div class="input-row">
-        <input id="userInput" type="text" placeholder="Digite aqui..." autofocus>
-        <button onclick="sendMessage()">Enviar</button>
-    </div>
+    <button class="btn" onclick="window.location.href='app1/index.html'">
+        Próximo
+    </button>
 </div>
-
-<script>
-let step = 0;
-let mode = "";
-
-window.onload = () => {
-    botMessage("Olá!");
-    botMessage("Como você deseja ser atendido(a)?<br>1 - Detalhadamente<br>2 - Diretamente");
-};
-
-function botMessage(text) {
-    const chat = document.getElementById("chat");
-    chat.innerHTML += `<div class="message bot">${text}</div>`;
-    chat.scrollTop = chat.scrollHeight;
-}
-
-function userMessage(text) {
-    const chat = document.getElementById("chat");
-    chat.innerHTML += `<div class="message user">${text}</div>`;
-    chat.scrollTop = chat.scrollHeight;
-}
-
-function sendMessage() {
-    const input = document.getElementById("userInput");
-    const msg = input.value.trim();
-    if (!msg) return;
-
-    userMessage(msg);
-    input.value = "";
-    handleResponse(msg);
-}
-
-function handleResponse(msg) {
-    if (step === 0) {
-        if (msg === "1") {
-            mode = "detailed";
-            step = 1;
-            botMessage("Perfeito! 💜 Muito obrigada por escolher.");
-            botMessage("1 - Planos<br>2 - Preços<br>3 - Suporte");
-        } else if (msg === "2") {
-            mode = "direct";
-            step = 1;
-            botMessage("Escolha:<br>1 - Planos<br>2 - Preços<br>3 - Suporte");
-        } else {
-            botMessage("Digite 1 ou 2.");
-        }
-    } else {
-        if (msg === "1") botMessage("Planos: Básico, Pro, Premium.");
-        else if (msg === "2") botMessage("Preços: R$29, R$59, R$99.");
-        else if (msg === "3") botMessage("Encaminhando para suporte...");
-        else botMessage("Escolha 1, 2 ou 3.");
-    }
-}
-</script>
 
 </body>
 </html>
