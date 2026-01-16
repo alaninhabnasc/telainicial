@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -12,7 +11,7 @@
     padding: 0;
     width: 100vw;
     height: 100vh;
-    background: #551A8B;
+    background: #551A8B; /* roxo escuro */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -20,7 +19,7 @@
   }
 
   .container {
-    background: #DDE1FF;
+    background: #DDE1FF; /* roxo claro */
     width: 90%;
     max-width: 400px;
     padding: 60px 20px;
@@ -42,7 +41,6 @@
     font-size: 30px;
     font-weight: 800;
     color: #4A00CC;
-    margin-top: 15px;
     margin-bottom: 45px;
   }
 
@@ -55,12 +53,25 @@
     font-size: 18px;
     font-weight: 700;
     cursor: pointer;
-    margin-top: 25px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.2);
   }
 
   .btn:hover {
     opacity: 0.9;
+  }
+
+  /* 🔥 QUANDO INSPECIONAR / DESKTOP */
+  @media (min-width: 768px) {
+    body {
+      background: #DDE1FF; /* só roxo claro */
+    }
+
+    .container {
+      width: 100%;
+      max-width: none;
+      min-height: 100vh;
+      border-radius: 0;
+    }
   }
 </style>
 </head>
@@ -70,15 +81,13 @@
     <img class="icon" src="logo.jpeg" alt="Logo" />
     <h1 class="titulo">DialogX</h1>
 
-    <!-- BOTÃO -->
     <button class="btn" onclick="proximo()">Próximo</button>
   </div>
 
-  <!-- SCRIPT DE NAVEGAÇÃO -->
   <script>
     function proximo() {
-      window.location.href = "../app1/";
+      window.location.href = "app1/index.html";
     }
   </script>
 </body>
-</html>    
+</html>
