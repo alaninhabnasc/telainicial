@@ -3,81 +3,85 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Tela</title>
+<title>Tela Inicial</title>
 
 <style>
-  * {
-    box-sizing: border-box;
-  }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
 
-  body {
-    margin: 0;
-    width: 100%;
-    min-height: 100svh;
-    background: #DDE1FF; /* só o roxinho claro aparece */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: Arial, sans-serif;
-    overflow: hidden; /* impede mostrar o fundo roxo escuro */
-  }
+body {
+  width: 100%;
+  min-height: 100svh;
+  background: #DDE1FF; /* só o roxinho claro */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
 
-  .container {
-    width: 100%;
-    max-width: 400px;
-    min-height: 100svh;
-    background: #DDE1FF;
-    padding: 60px 20px;
-    border-radius: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
+.container {
+  width: 100%;
+  max-width: 400px;
+  min-height: 100svh;
+  background: #DDE1FF;
+  padding: 60px 20px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
 
-  .icon {
-    width: 160px;
-    max-width: 80%;
-    margin-bottom: 20px;
-  }
+.icon {
+  width: 160px;
+  max-width: 80%;
+  margin-bottom: 20px;
+}
 
-  .titulo {
-    font-size: clamp(24px, 5vw, 30px);
-    font-weight: 800;
-    color: #4A00CC;
-    margin: 15px 0 45px;
-  }
+.titulo {
+  font-size: clamp(24px, 6vw, 30px);
+  font-weight: 800;
+  color: #4A00CC;
+  margin-bottom: 45px;
+}
 
-  .btn {
-    background: #5A0FBF;
-    border: none;
-    padding: 15px 50px;
-    border-radius: 40px;
-    color: white;
-    font-size: 18px;
-    font-weight: 700;
-    cursor: pointer;
-    margin-top: 25px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-  }
+.btn {
+  background: #5A0FBF;
+  border: none;
+  padding: 15px 50px;
+  border-radius: 40px;
+  color: white;
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
 
-  .btn:hover {
-    opacity: 0.9;
-  }
+.btn:hover {
+  opacity: 0.9;
+}
 </style>
 </head>
 
 <body>
-  <div class="container">
-    <img class="icon" src="logo.jpeg" alt="Logo" />
-    <h1 class="titulo">DialogX</h1>
-    <button class="btn" onclick="proximo()">Próximo</button>
-  </div>
 
-  <script>
-    function proximo() {
-      window.location.href = "../app1/";
-    }
-  </script>
+<div class="container">
+  <img class="icon" src="logo.jpeg" alt="Logo">
+  <h1 class="titulo">DialogX</h1>
+
+  <button class="btn" onclick="proximo()">Próximo</button>
+</div>
+
+<script>
+function proximo() {
+  window.location.href = "../app1/";
+}
+</script>
+
 </body>
 </html>
